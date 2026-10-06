@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo.png">
+    <title>Login | KALORA</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<header class="simple-navbar">
+
+    <a href="index.html"
+       class="logo">
+
+        KALORA
+
+    </a>
+
+    <a href="shop.html">
+        Continue Shopping
+    </a>
+
+</header>
+
+
+
+<main class="auth-page">
+
+    <section class="auth-box">
+
+        <p class="auth-label">
+            WELCOME BACK
+        </p>
+
+        <h1>
+            Sign In
+        </h1>
+
+        <p class="auth-subtitle">
+            Enter your details to access your KALORA account.
+        </p>
+
+
+        <form id="loginForm">
+
+            <label>
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+                required>
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                required>
+
+
+            <button type="submit"
+                    class="auth-button">
+
+                SIGN IN
+
+            </button>
+
+        </form>
+
+
+        <p id="loginMessage"
+           class="auth-message">
+        </p>
+        <div class="auth-divider">
+    <span>OR</span>
+</div>
+
+<button type="button" class="social-login google-login">
+    <span class="google-icon">G</span>
+    Continue with Google
+</button>
+
+<button type="button" class="social-login apple-login">
+    <span class="apple-icon"></span>
+    Continue with Apple
+</button>
+
+
+        <div class="auth-divider">
+            <span>OR</span>
+        </div>
+
+
+        <p class="auth-switch">
+
+            Don't have an account?
+
+            <a href="register.html">
+                Create Account
+            </a>
+
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="auth-footer">
+
+    <p>
+        © 2026 KALORA. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

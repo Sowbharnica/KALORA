@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<link rel="icon" type="image/png" href="images/logo.png">
+    <title>KALORA | Checkout</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            KALORA
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="shop.html">
+                SHOP
+            </a>
+
+            <a href="account.html">
+                ACCOUNT
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- CHECKOUT HEADER -->
+
+    <section class="checkout-header">
+
+        <span>SECURE SHOPPING</span>
+
+        <h1>Checkout</h1>
+
+        <p>
+            Complete your details to place your order.
+        </p>
+
+    </section>
+
+
+
+    <!-- CHECKOUT -->
+
+    <main class="checkout-container">
+
+
+        <!-- DELIVERY DETAILS -->
+
+        <section class="checkout-section">
+
+            <span class="checkout-label">
+                01 — DELIVERY
+            </span>
+
+            <h2>Delivery Address</h2>
+            <div class="saved-address-area">
+
+              <label>USE SAVED ADDRESS</label>
+
+              <select id="savedAddressSelect">
+
+             <option value="">
+               Select a saved address
+             </option>
+
+             </select>
+
+           </div>
+
+
+            <div class="checkout-form">
+
+
+                <div class="checkout-field">
+
+                    <label>FULL NAME</label>
+
+                    <input
+                        type="text"
+                        id="checkoutName"
+                        placeholder="Enter your full name"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label>PHONE NUMBER</label>
+
+                    <input
+                        type="tel"
+                        id="checkoutPhone"
+                        placeholder="Enter your phone number"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field full-width">
+
+                    <label>ADDRESS</label>
+
+                    <textarea
+                        id="checkoutAddress"
+                        placeholder="House / Street / Area"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label>CITY</label>
+
+                    <input
+                        type="text"
+                        id="checkoutCity"
+                        placeholder="City"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label>STATE</label>
+
+                    <input
+                        type="text"
+                        id="checkoutState"
+                        placeholder="State"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label>PINCODE</label>
+
+                    <input
+                        type="text"
+                        id="checkoutPincode"
+                        placeholder="Pincode"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ORDER SUMMARY -->
+
+        <section class="checkout-section">
+
+            <span class="checkout-label">
+                02 — ORDER
+            </span>
+
+            <h2>Order Summary</h2>
+
+
+            <div
+                id="checkoutItems"
+                class="checkout-items"
+            >
+                <!-- Cart items appear here -->
+            </div>
+
+
+            <div class="checkout-total">
+
+                <span>Total</span>
+
+                <strong id="checkoutTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAYMENT -->
+
+        <section class="checkout-section">
+
+            <span class="checkout-label">
+                03 — PAYMENT
+            </span>
+
+            <h2>Payment Method</h2>
+
+
+            <div class="payment-options">
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="cod"
+                        checked
+                    >
+
+                    <span>
+                        Cash on Delivery
+                    </span>
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="online"
+                    >
+
+                    <span>
+                        Online Payment
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="placeOrderBtn"
+                class="place-order-btn"
+            >
+                PLACE ORDER
+            </button>
+
+
+            <p
+                id="checkoutMessage"
+                class="checkout-message"
+            ></p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 KALORA — WHERE ELEGANCE HAS AN AURA
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

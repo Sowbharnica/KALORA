@@ -1,0 +1,4203 @@
+/* =========================
+   KALORA - GLOBAL
+========================= */
+
+:root {
+    --burgundy: #5a1020;
+    --dark-burgundy: #350812;
+    --black: #0b0909;
+    --gold: #c6a15b;
+    --ivory: #f7f1e8;
+    --white: #ffffff;
+    --text: #211c1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 82px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: var(--black);
+    color: var(--white);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    letter-spacing: 10px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.left-nav,
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.left-nav a,
+.right-nav a {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.left-nav a:hover,
+.right-nav a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 92vh;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 5, 7, 0.82),
+            rgba(10, 5, 7, 0.25)
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 8%;
+
+    color: var(--white);
+}
+/* =========================================
+   HERO SHOP COLLECTION BUTTON
+========================================= */
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 15px 32px;
+
+    background: var(--gold);
+    color: var(--black);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    border: 1px solid var(--gold);
+    transition: all 0.4s ease;
+
+    animation: goldGlow 2.2s ease-in-out infinite;
+}
+
+.hero-btn:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(198, 161, 91, 0.55);
+}
+
+
+/* Golden shining effect */
+
+@keyframes goldGlow {
+
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(198, 161, 91, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 12px rgba(198, 161, 91, 0.55),
+            0 0 25px rgba(198, 161, 91, 0.25);
+    }
+
+}
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+    padding: 110px 7%;
+    background: var(--ivory);
+}
+
+
+/* SECTION HEADING */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+
+/* CATEGORY GRID */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.category-card {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+}
+
+.category-card:nth-child(2),
+.category-card:nth-child(5) {
+    transform: translateY(70px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.06);
+}
+
+.category-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 35px 30px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.75)
+    );
+
+    color: white;
+}
+
+.category-overlay h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.category-overlay span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #d9bc78;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        height: 430px;
+    }
+
+    .category-card:nth-child(2),
+    .category-card:nth-child(5) {
+        transform: none;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+}
+/* =========================
+   BRAND STATEMENT
+========================= */
+
+.brand-statement {
+    background: var(--burgundy);
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 150px 20px;
+}
+
+.brand-statement h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 7vw, 85px);
+    font-weight: 400;
+    line-height: 1.05;
+
+    margin-bottom: 35px;
+}
+
+.brand-statement > p:last-child {
+    max-width: 550px;
+    margin: auto;
+
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: var(--black);
+    color: var(--white);
+
+    text-align: center;
+    padding: 80px 20px 35px;
+}
+
+.footer-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 45px;
+    letter-spacing: 10px;
+    color: var(--gold);
+}
+
+.footer > p {
+    margin-top: 12px;
+    color: #b8aeb0;
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 35px 0;
+}
+
+.footer-links a {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.copyright {
+    border-top: 1px solid #30292a;
+    padding-top: 25px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .left-nav {
+        display: none;
+    }
+
+    .right-nav a:first-child {
+        display: none;
+    }
+
+    .logo {
+        font-size: 27px;
+        letter-spacing: 7px;
+    }
+
+    .menu-btn {
+        display: block;
+
+        background: none;
+        border: none;
+        color: var(--white);
+
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding: 130px 7% 70px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .category-card:nth-child(even) {
+        margin-top: 0;
+    }
+
+    .category-image {
+        height: 450px;
+    }
+
+    .categories {
+        padding: 90px 6%;
+    }
+
+    .brand-statement {
+        padding: 110px 20px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+/* =========================================
+   KALORA SHOP PAGE
+========================================= */
+
+.shop-header {
+    padding: 150px 7% 80px;
+    text-align: center;
+    background: var(--ivory);
+}
+
+.shop-header p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+}
+
+.shop-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 70px;
+    font-weight: 400;
+    margin: 15px 0;
+    color: var(--black);
+}
+
+.shop-header span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #666;
+}
+
+
+/* SHOP CONTROLS */
+
+.shop-controls {
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    background: var(--white);
+}
+
+.results {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.shop-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.shop-actions select {
+    border: 1px solid #ccc;
+    padding: 12px 18px;
+    background: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* PRODUCT SECTION */
+
+.product-section {
+    padding: 70px 7% 120px;
+    background: var(--white);
+}
+
+
+/* PRODUCT GRID */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55px 25px;
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+
+/* WISHLIST */
+
+.wishlist-btn {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.wishlist-btn:hover {
+    background: var(--burgundy);
+    color: white;
+}
+
+
+/* PRODUCT BADGE */
+
+.product-badge {
+    position: absolute;
+
+    left: 18px;
+    top: 18px;
+
+    background: var(--burgundy);
+    color: white;
+
+    padding: 8px 12px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* PRODUCT INFO */
+
+.product-info {
+    padding-top: 18px;
+}
+
+.product-category {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: #999;
+
+    margin-bottom: 7px;
+}
+
+.product-info h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+    font-weight: 400;
+
+    color: var(--black);
+
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: var(--burgundy);
+}
+
+
+/* PRODUCT HOVER */
+
+.product-card {
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-card:hover .product-info h2 {
+    color: var(--burgundy);
+}
+
+.product-card .product-image img {
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .shop-header {
+        padding: 120px 7% 60px;
+    }
+
+    .shop-header h1 {
+        font-size: 50px;
+    }
+
+    .shop-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .shop-actions {
+        width: 100%;
+    }
+
+    .shop-actions select {
+        flex: 1;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 12px;
+    }
+
+    .product-image {
+        height: 360px;
+    }
+
+    .product-info h2 {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 500px;
+    }
+}
+/* =========================================
+   PRODUCT DETAILS PAGE
+========================================= */
+
+.product-details {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+
+    padding: 120px 7% 100px;
+
+    background: var(--white);
+}
+
+
+/* PRODUCT GALLERY */
+
+.main-product-image {
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.main-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* PRODUCT WISHLIST */
+
+.product-wishlist {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* THUMBNAILS */
+
+.thumbnail-images {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.thumbnail {
+    width: 90px;
+    height: 110px;
+
+    padding: 0;
+
+    border: 1px solid transparent;
+
+    background: none;
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+.thumbnail.active {
+    border: 1px solid var(--burgundy);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* PRODUCT INFORMATION */
+
+.product-details-info {
+    padding-top: 30px;
+}
+
+.detail-category {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--gold);
+}
+
+.product-details-info h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    margin: 15px 0;
+}
+
+.detail-price {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 20px;
+    color: var(--burgundy);
+}
+
+.tax-info {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+    color: #888;
+
+    margin-top: 7px;
+}
+
+.detail-divider {
+    height: 1px;
+    background: #ddd;
+
+    margin: 30px 0;
+}
+
+
+/* DESCRIPTION */
+
+.detail-description {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #555;
+
+    margin-bottom: 35px;
+}
+
+
+/* OPTIONS */
+
+.option-group {
+    margin-bottom: 30px;
+}
+
+.option-group h3 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 14px;
+}
+
+
+/* COLOUR */
+
+.colour-options {
+    display: flex;
+    gap: 12px;
+}
+
+.colour-btn {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    border: 2px solid white;
+    outline: 1px solid #aaa;
+
+    background: var(--burgundy);
+
+    cursor: pointer;
+}
+
+.colour-btn.black {
+    background: #111;
+}
+
+.colour-btn.ivory {
+    background: #eee4d2;
+}
+
+.colour-btn.selected {
+    outline: 2px solid var(--burgundy);
+}
+
+
+/* SIZE */
+
+.size-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.size-heading a {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    color: var(--burgundy);
+    text-decoration: underline;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+}
+
+.size-options button {
+    width: 55px;
+    height: 45px;
+
+    border: 1px solid #ccc;
+
+    background: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.size-options button:hover {
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+}
+
+
+/* QUANTITY */
+
+.quantity-box {
+    display: flex;
+
+    width: 130px;
+    height: 45px;
+
+    border: 1px solid #ccc;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantity-box button {
+    width: 40px;
+    height: 100%;
+
+    border: none;
+    background: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.quantity-box span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+}
+
+
+/* PURCHASE BUTTONS */
+
+.purchase-buttons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+.add-cart-btn,
+.buy-now-btn {
+    width: 100%;
+
+    height: 55px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.add-cart-btn {
+    background: var(--black);
+    color: white;
+
+    border: 1px solid var(--black);
+}
+
+.add-cart-btn:hover {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+}
+
+.buy-now-btn {
+    background: var(--burgundy);
+    color: white;
+
+    border: 1px solid var(--burgundy);
+}
+
+.buy-now-btn:hover {
+    background: var(--dark-burgundy);
+}
+
+
+/* EXTRA INFORMATION */
+
+.product-extra {
+    margin-top: 35px;
+
+    border-top: 1px solid #ddd;
+}
+
+.product-extra details {
+    border-bottom: 1px solid #ddd;
+
+    padding: 20px 0;
+}
+
+.product-extra summary {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.product-extra p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+    line-height: 1.8;
+
+    color: #666;
+
+    margin-top: 15px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .product-details {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 100px 5% 70px;
+    }
+
+    .main-product-image {
+        height: 550px;
+    }
+
+    .product-details-info h1 {
+        font-size: 38px;
+    }
+}
+/* =========================================
+   KALORA CART PAGE
+========================================= */
+
+.cart-header {
+    padding: 140px 7% 70px;
+
+    text-align: center;
+
+    background: var(--ivory);
+}
+
+.cart-header p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+}
+
+.cart-header h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 58px;
+
+    font-weight: 400;
+
+    margin-top: 15px;
+}
+
+
+/* CART PAGE */
+
+.cart-page {
+    display: grid;
+
+    grid-template-columns: 1fr 380px;
+
+    gap: 70px;
+
+    padding: 80px 7% 120px;
+
+    background: white;
+}
+
+
+/* CART ITEM */
+
+.cart-item {
+    display: grid;
+
+    grid-template-columns: 150px 1fr auto;
+
+    gap: 25px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image {
+    width: 150px;
+    height: 190px;
+
+    overflow: hidden;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.cart-item-info {
+    padding-top: 5px;
+}
+
+.cart-item-category {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #999;
+}
+
+.cart-item-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    margin: 10px 0;
+}
+
+.cart-item-info p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    color: #666;
+
+    margin: 6px 0;
+}
+
+
+/* CART QUANTITY */
+
+.cart-quantity {
+    display: flex;
+
+    width: 110px;
+    height: 38px;
+
+    border: 1px solid #ccc;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 18px;
+}
+
+.cart-quantity button {
+    width: 35px;
+    height: 100%;
+
+    border: none;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.cart-quantity span {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+}
+
+
+/* CART PRICE */
+
+.cart-item-price {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    color: var(--burgundy);
+
+    padding-top: 8px;
+}
+
+
+/* REMOVE */
+
+.remove-item {
+    display: block;
+
+    border: none;
+
+    background: none;
+
+    margin-top: 15px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+
+/* SUMMARY */
+
+.cart-summary {
+    align-self: start;
+
+    padding: 35px;
+
+    background: var(--ivory);
+}
+
+.cart-summary h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+.summary-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    color: #666;
+}
+
+.summary-row strong {
+    color: var(--black);
+
+    font-weight: 500;
+}
+
+.summary-divider {
+    height: 1px;
+
+    background: #d6cec3;
+
+    margin: 25px 0;
+}
+
+.summary-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+}
+
+.summary-total strong {
+    color: var(--burgundy);
+}
+
+
+/* CHECKOUT */
+
+.checkout-btn {
+    width: 100%;
+
+    height: 55px;
+
+    margin-top: 30px;
+
+    border: none;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background: var(--dark-burgundy);
+}
+
+.continue-shopping {
+    display: block;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    color: var(--black);
+
+    text-decoration: underline;
+}
+
+
+/* EMPTY CART */
+
+.empty-cart {
+    display: none;
+
+    min-height: 400px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.empty-cart span {
+    font-size: 35px;
+
+    color: var(--gold);
+}
+
+.empty-cart h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 35px;
+
+    font-weight: 400;
+
+    margin: 15px 0;
+}
+
+.empty-cart p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.empty-cart a {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .cart-page {
+        grid-template-columns: 1fr;
+
+        padding: 50px 5% 80px;
+    }
+
+    .cart-item {
+        grid-template-columns: 100px 1fr;
+
+        gap: 15px;
+    }
+
+    .cart-item-image {
+        width: 100px;
+        height: 140px;
+    }
+
+    .cart-item-price {
+        grid-column: 2;
+    }
+
+}
+/* =========================================
+   AUTH PAGES
+========================================= */
+
+.simple-navbar {
+    height: 90px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #eee;
+
+    background: white;
+}
+
+.simple-navbar .logo {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    letter-spacing: 5px;
+
+    color: var(--black);
+}
+
+.simple-navbar > a:last-child {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    color: var(--black);
+}
+
+
+.auth-page {
+    min-height: 720px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    background: var(--ivory);
+}
+
+.auth-box {
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 55px;
+
+    background: white;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+}
+
+.auth-label {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+
+    text-align: center;
+}
+
+.auth-box h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    text-align: center;
+
+    margin: 12px 0;
+}
+
+.auth-subtitle {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    color: #777;
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.auth-box label {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    margin: 20px 0 8px;
+}
+
+.auth-box input {
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #ccc;
+
+    padding: 0 15px;
+
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    box-sizing: border-box;
+}
+
+.auth-box input:focus {
+    border-color: var(--burgundy);
+}
+
+.auth-button {
+    width: 100%;
+
+    height: 53px;
+
+    margin-top: 28px;
+
+    border: none;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background: var(--dark-burgundy);
+}
+
+.auth-message {
+    min-height: 18px;
+
+    margin-top: 15px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+.auth-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+
+    color: #aaa;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddd;
+}
+
+.auth-switch {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+.auth-switch a {
+    color: var(--burgundy);
+
+    text-decoration: underline;
+}
+
+.auth-footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: var(--black);
+
+    color: #aaa;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   ACCOUNT PAGE
+========================================= */
+
+.account-header {
+    padding: 120px 7% 65px;
+
+    text-align: center;
+
+    background: var(--ivory);
+}
+
+.account-header p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+}
+
+.account-header h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    margin-top: 12px;
+}
+
+.account-page {
+    display: grid;
+
+    grid-template-columns: 230px 1fr;
+
+    gap: 70px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 7% 120px;
+}
+
+.account-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    align-self: start;
+
+    border-right: 1px solid #ddd;
+
+    padding-right: 30px;
+}
+
+.account-tab,
+.logout-button {
+    border: none;
+    background: none;
+
+    padding: 16px 0;
+
+    text-align: left;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.account-tab {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.account-tab:hover {
+    color: var(--burgundy);
+}
+
+.account-tab {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.account-tab:hover {
+    color: var(--burgundy);
+}
+
+.account-tab.active {
+    color: var(--burgundy);
+    border-bottom: none;
+}
+
+.account-tab.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 5px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--burgundy);
+
+    transform: scaleX(1);
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+.logout-button {
+    margin-top: 25px;
+
+    color: #888;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.logout-button:hover {
+    color: var(--burgundy);
+
+    transform: translateX(4px);
+}
+
+.account-section {
+    display: none;
+}
+
+.account-section.active {
+    display: block;
+}
+/* =========================================
+   ACCOUNT SECTION PREMIUM TRANSITION
+========================================= */
+
+.account-section {
+    animation: accountSectionFade 0.45s ease;
+}
+
+@keyframes accountSectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.account-label {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+}
+
+.account-section h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    margin: 10px 0 35px;
+}
+
+.profile-card {
+    border: 1px solid #ddd;
+
+    padding: 30px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+}
+
+.profile-card p {
+    margin: 10px 0;
+}
+
+.empty-account {
+    text-align: center;
+
+    border: 1px solid #ddd;
+
+    padding: 60px 20px;
+}
+
+.empty-account span {
+    font-size: 30px;
+
+    color: var(--gold);
+}
+
+.empty-account p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin: 15px 0 25px;
+}
+
+.empty-account a {
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .auth-box {
+        padding: 35px 25px;
+    }
+
+    .account-page {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .account-menu {
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+
+        padding-right: 0;
+
+        padding-bottom: 15px;
+    }
+
+    .account-tab,
+    .logout-button {
+        padding: 12px 0;
+    }
+
+}
+/* =========================================
+   SOCIAL LOGIN
+========================================= */
+
+.social-login {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 12px;
+
+    background: white;
+    border: 1px solid #d8d8d8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.social-login:hover {
+    border-color: var(--black);
+    transform: translateY(-2px);
+}
+
+.google-icon {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.apple-icon {
+    font-size: 18px;
+}
+/* =========================================
+   SHOP SEARCH + FILTERS
+========================================= */
+
+.shop-controls {
+    display: grid;
+
+    grid-template-columns: 1fr 220px 220px;
+
+    gap: 20px;
+
+    padding: 25px 7%;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    background: white;
+}
+
+.shop-search input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+}
+
+.shop-search input:focus {
+    border-color: var(--burgundy);
+}
+
+.shop-filter {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.shop-filter label {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.shop-filter select {
+    height: 48px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ccc;
+
+    background: white;
+
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.shop-filter select:focus {
+    border-color: var(--burgundy);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .shop-controls {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+}
+/* =========================================
+   STEP 7.2 — SHOP SEARCH & FILTERS
+========================================= */
+
+.shop-controls {
+    display: grid;
+
+    grid-template-columns: 1fr 220px 220px;
+
+    gap: 20px;
+
+    padding: 25px 7%;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    background: white;
+}
+
+
+/* SEARCH */
+
+.shop-search input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    background: white;
+
+    transition: 0.3s ease;
+}
+
+.shop-search input:focus {
+    border-color: var(--burgundy);
+}
+
+
+/* FILTER */
+
+.shop-filter {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.shop-filter label {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.shop-filter select {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ccc;
+
+    background: white;
+
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.shop-filter select:focus {
+    border-color: var(--burgundy);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .shop-controls {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+}
+/* =========================================
+   STEP 7.4 — WISHLIST
+========================================= */
+
+.product-card {
+    position: relative;
+}
+
+.wishlist-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    background: var(--burgundy);
+
+    color: white;
+
+    transform: scale(1.08);
+}
+
+.wishlist-btn.active {
+    background: var(--burgundy);
+
+    color: white;
+}
+/* =========================================
+   STEP 7.5 — WISHLIST DISPLAY
+========================================= */
+
+.wishlist-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.wishlist-item {
+    border: 1px solid #e5e5e5;
+
+    background: white;
+
+    padding-bottom: 20px;
+
+    position: relative;
+}
+
+.wishlist-item img {
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.wishlist-item-info {
+    padding: 15px 18px 0;
+}
+
+.wishlist-item-name {
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+.wishlist-item-price {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    color: var(--burgundy);
+}
+
+.remove-wishlist {
+    margin-top: 15px;
+
+    border: none;
+
+    background: none;
+
+    color: #888;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.remove-wishlist:hover {
+    color: var(--burgundy);
+}
+
+
+/* EMPTY WISHLIST */
+
+.wishlist-empty {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+
+    padding: 60px 20px;
+}
+
+.wishlist-empty span {
+    font-size: 30px;
+
+    color: var(--gold);
+}
+
+.wishlist-empty p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin: 15px 0 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .wishlist-container {
+        grid-template-columns: 1fr;
+    }
+
+    .wishlist-item img {
+        height: 400px;
+    }
+
+}
+/* =========================================
+   STEP 7.7 — WISHLIST ADD TO BAG
+========================================= */
+
+.wishlist-add-cart {
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--burgundy);
+    background: var(--burgundy);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.wishlist-add-cart:hover {
+    background: black;
+    border-color: black;
+}
+/* =========================================
+   STEP 8.1 — SAVED ADDRESSES
+========================================= */
+
+.address-container {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.address-card {
+    border: 1px solid #ddd;
+    padding: 22px;
+    background: #fff;
+}
+
+.address-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.address-card p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #666;
+}
+
+.address-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.address-actions button {
+    border: none;
+    background: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: var(--burgundy);
+}
+
+.account-action-btn {
+    padding: 14px 24px;
+    border: 1px solid var(--burgundy);
+    background: var(--burgundy);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+/* =========================================
+   STEP 8.2 — MY ORDERS
+========================================= */
+
+.orders-container {
+    display: grid;
+    gap: 20px;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 25px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee;
+    gap: 15px;
+}
+
+.order-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+.order-status {
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--burgundy);
+}
+
+.order-product {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.order-product img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.order-product-info {
+    flex: 1;
+}
+
+.order-product-name {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.order-product-details {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #777;
+}
+
+.order-footer {
+    border-top: 1px solid #eee;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-total {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.view-order-btn {
+    border: none;
+    background: none;
+    color: var(--burgundy);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .order-header,
+    .order-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-product img {
+        width: 80px;
+        height: 105px;
+    }
+}
+/* =========================================
+   STEP 8.3 — ORDER TRACKING
+========================================= */
+
+.tracking-card {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 35px 25px;
+}
+
+.tracking-order {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+}
+
+.tracking-line {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.tracking-line::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: #ddd;
+    z-index: 0;
+}
+
+.tracking-step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 20%;
+}
+
+.tracking-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    border-radius: 50%;
+    background: #eee;
+    color: #777;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+}
+
+.tracking-step.active span {
+    background: var(--burgundy);
+    color: white;
+}
+
+.tracking-step p {
+    margin-top: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: #777;
+}
+
+.tracking-step.active p {
+    color: var(--burgundy);
+}
+
+@media (max-width: 600px) {
+
+    .tracking-card {
+        overflow-x: auto;
+    }
+
+    .tracking-line {
+        min-width: 600px;
+    }
+}
+/* =========================================
+   STEP 8.4 — PROFILE EDIT
+========================================= */
+
+.profile-form {
+    max-width: 600px;
+}
+
+.profile-field {
+    margin-bottom: 22px;
+}
+
+.profile-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #777;
+}
+
+.profile-field input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+}
+
+.profile-field input:focus {
+    border-color: var(--burgundy);
+}
+
+.profile-field input:read-only {
+    background: #f7f7f7;
+}
+
+.profile-save-btn {
+    padding: 14px 25px;
+    border: 1px solid var(--burgundy);
+    background: var(--burgundy);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.profile-message {
+    margin-top: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    color: var(--burgundy);
+}
+/* =========================================
+   STEP 9.1 — CHECKOUT
+========================================= */
+
+.checkout-header {
+    text-align: center;
+    padding: 90px 20px 60px;
+    background: #f8f5f0;
+}
+
+.checkout-header span,
+.checkout-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--burgundy);
+}
+
+.checkout-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    font-weight: 400;
+    margin: 12px 0;
+}
+
+.checkout-header p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    color: #777;
+}
+
+.checkout-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 25px;
+}
+
+.checkout-section {
+    padding: 35px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.checkout-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 12px 0 30px;
+}
+
+.checkout-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.checkout-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkout-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.checkout-field label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #777;
+}
+
+.checkout-field input,
+.checkout-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 14px;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+}
+
+.checkout-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.checkout-field input:focus,
+.checkout-field textarea:focus {
+    border-color: var(--burgundy);
+}
+
+.checkout-items {
+    display: grid;
+    gap: 15px;
+}
+
+.checkout-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.checkout-item-info {
+    flex: 1;
+}
+
+.checkout-item-name {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.checkout-item-details {
+    margin-top: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    color: #777;
+}
+
+.checkout-item-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    font-family: "Montserrat", sans-serif;
+}
+
+.checkout-total strong {
+    color: var(--burgundy);
+}
+
+.payment-options {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    background: var(--burgundy);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.place-order-btn:hover {
+    background: black;
+}
+
+.checkout-message {
+    margin-top: 15px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+}
+
+@media (max-width: 650px) {
+
+    .checkout-header h1 {
+        font-size: 42px;
+    }
+
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-field.full-width {
+        grid-column: auto;
+    }
+}
+/* =========================================
+   STEP 9.2 — SAVED ADDRESS CHECKOUT
+========================================= */
+
+.saved-address-area {
+    margin-bottom: 25px;
+}
+
+.saved-address-area label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #777;
+}
+
+.saved-address-area select {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+
+    border: 1px solid #ccc;
+    background: white;
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.saved-address-area select:focus {
+    border-color: var(--burgundy);
+}
+/* =========================================
+   STEP 9.3 — ORDER SUCCESS
+========================================= */
+
+.order-success {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #f8f5f0;
+}
+
+.success-label {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    letter-spacing: 5px;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 30px 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--burgundy);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+}
+
+.order-success h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.order-success p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    color: #777;
+}
+
+#successOrderNumber {
+    margin-top: 15px;
+    color: var(--burgundy);
+    letter-spacing: 1.5px;
+}
+
+.success-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.success-actions a {
+    padding: 14px 22px;
+    border: 1px solid var(--burgundy);
+    text-decoration: none;
+    color: var(--burgundy);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.success-actions a:first-child {
+    background: var(--burgundy);
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    .order-success h1 {
+        font-size: 38px;
+    }
+
+    .success-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+}
+/* =========================================
+   STEP 9.4 — MULTIPLE ORDER PRODUCTS
+========================================= */
+
+.order-products {
+    display: grid;
+}
+
+.order-product {
+    border-bottom: 1px solid #eee;
+}
+
+.order-product:last-child {
+    border-bottom: none;
+}
+/* =========================================
+   STEP 10.1 — RESPONSIVE NAVBAR
+   ========================================= */
+
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 18px 20px;
+        position: relative;
+    }
+
+    .nav-left {
+        display: none;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--gold);
+        font-size: 22px;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1001;
+    }
+
+    .logo {
+        font-size: 27px;
+        letter-spacing: 3px;
+    }
+}
+/* =========================================
+   MOBILE MENU
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .nav-left.mobile-menu {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background: var(--black);
+        border-top: 1px solid rgba(198, 161, 91, 0.25);
+        border-bottom: 1px solid rgba(198, 161, 91, 0.25);
+        z-index: 1000;
+    }
+
+    .nav-left.mobile-menu a {
+        width: 100%;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 1px solid rgba(198, 161, 91, 0.12);
+    }
+
+}
+/* =========================================
+   STEP 10.3 — RESPONSIVE HERO
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 85vh;
+        height: auto;
+        background-position: 65% center;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 100px 25px 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 70px);
+        line-height: 0.95;
+    }
+
+    .hero p {
+        font-size: 14px;
+        max-width: 280px;
+        line-height: 1.7;
+    }
+
+    .hero-btn {
+        padding: 14px 25px;
+        font-size: 10px;
+    }
+
+}
+/* =========================================
+   STEP 10.4 — RESPONSIVE CATEGORIES
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .category-card:nth-child(2),
+    .category-card:nth-child(5) {
+        transform: none;
+    }
+
+    .category-card {
+        min-height: 420px;
+    }
+
+    .category-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+/* =========================================
+   STEP 10.5 — RESPONSIVE SHOP
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .shop-header {
+        padding: 80px 20px 40px;
+    }
+
+    .shop-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .shop-search,
+    .shop-filter {
+        width: 100%;
+    }
+
+    .shop-search input,
+    .shop-filter select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+
+    .product-price {
+        font-size: 14px;
+    }
+
+}
+@media (max-width: 480px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================
+   STEP 10.6 — RESPONSIVE PRODUCT DETAILS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 30px 20px;
+    }
+
+    .product-detail-image {
+        width: 100%;
+    }
+
+    .product-detail-info {
+        padding: 0;
+    }
+
+    .product-detail-info h1 {
+        font-size: 38px;
+    }
+
+    .detail-price {
+        font-size: 22px;
+    }
+
+}
+/* =========================================
+   STEP 10.7 — RESPONSIVE CART
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .cart-page {
+        padding: 30px 20px;
+    }
+
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        gap: 15px;
+    }
+
+    .cart-item img {
+        width: 80px;
+        height: 110px;
+        object-fit: cover;
+    }
+
+    .cart-item-actions {
+        grid-column: 2;
+    }
+
+    .cart-summary {
+        width: 100%;
+    }
+
+}
+/* =========================================
+   STEP 10.8 — RESPONSIVE CHECKOUT
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .checkout-page {
+        padding: 30px 20px;
+    }
+
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .checkout-form,
+    .order-summary {
+        width: 100%;
+    }
+
+    .checkout-form input,
+    .checkout-form select,
+    .checkout-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+/* =========================================
+   STEP 10.9 — RESPONSIVE ACCOUNT
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .account-page {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 20px;
+    }
+
+    .account-menu {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+    }
+
+    .account-tab {
+        white-space: nowrap;
+    }
+
+    .account-content {
+        width: 100%;
+    }
+
+    .wishlist-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .address-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================
+   STEP 10.10 — PREMIUM BUTTON EFFECTS
+   ========================================= */
+
+button,
+.hero-btn,
+.account-action-btn {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover,
+.account-action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.hero-btn:hover {
+    letter-spacing: 2.5px;
+}
+/* =========================================
+   STEP 10.11 — PRODUCT IMAGE HOVER
+   ========================================= */
+
+.product-card {
+    overflow: hidden;
+}
+
+.product-card img {
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+/* =========================================
+   STEP 10.12 — SCROLL REVEAL
+   ========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* =========================================
+   STEP 10.13 — SMOOTH SCROLL
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+/* =========================================
+   STEP 10.14 — TEXT SELECTION
+   ========================================= */
+
+::selection {
+    background: var(--gold);
+    color: var(--black);
+}
+/* =========================================
+   STEP 10.15 — PREMIUM SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ivory);
+}
+/* =========================================
+   STEP 10.16 — MOBILE TOUCH
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    button,
+    a,
+    select,
+    input {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button,
+    .hero-btn,
+    a {
+        min-height: 42px;
+    }
+
+}
+/* =========================================
+   STEP 10.17 — OVERFLOW CONTROL
+   ========================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* =========================================
+   STEP 10.18 — REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+/* =========================================
+   STEP 11.1 — WISHLIST STYLING
+   ========================================= */
+
+.wishlist-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.wishlist-card {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid rgba(198, 161, 91, 0.2);
+    background: rgba(90, 16, 32, 0.04);
+}
+
+.wishlist-image-link {
+    display: block;
+    overflow: hidden;
+}
+
+.wishlist-image-link img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.wishlist-card:hover .wishlist-image-link img {
+    transform: scale(1.04);
+}
+
+.wishlist-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wishlist-category {
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.wishlist-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.wishlist-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.wishlist-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wishlist-add-cart,
+.wishlist-remove {
+    padding: 10px 14px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.wishlist-add-cart {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.wishlist-remove:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.wishlist-empty {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+#kaloraToast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    padding: 14px 20px;
+    background: var(--black);
+    border: 1px solid var(--gold);
+    color: var(--ivory);
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+#kaloraToast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+
+    .wishlist-container {
+        grid-template-columns: 1fr;
+    }
+
+    .wishlist-card {
+        grid-template-columns: 110px 1fr;
+        gap: 15px;
+    }
+
+    .wishlist-image-link img {
+        height: 160px;
+    }
+
+    .wishlist-info h3 {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .wishlist-card {
+        grid-template-columns: 1fr;
+    }
+
+    .wishlist-image-link img {
+        height: 300px;
+    }
+
+}
+/* =========================================
+   STEP 11.2 — SAVED ADDRESS STYLING
+   ========================================= */
+
+.address-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.address-card {
+    padding: 25px;
+    border: 1px solid rgba(198, 161, 91, 0.25);
+    background: rgba(90, 16, 32, 0.04);
+}
+
+.address-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.address-type,
+.default-address {
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.address-type {
+    color: var(--gold);
+}
+
+.default-address {
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 5px 8px;
+}
+
+.address-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.address-card p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.address-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.address-actions button {
+    padding: 9px 12px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.address-actions button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.address-form {
+    grid-column: 1 / -1;
+    padding: 30px;
+    border: 1px solid rgba(198, 161, 91, 0.3);
+    background: rgba(90, 16, 32, 0.04);
+}
+
+.address-form input,
+.address-form select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 14px;
+    border: 1px solid rgba(198, 161, 91, 0.35);
+    background: transparent;
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.address-form input:focus,
+.address-form select:focus {
+    border-color: var(--gold);
+}
+
+.default-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+}
+
+.default-check input {
+    width: auto;
+    margin: 0;
+}
+
+.address-form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.address-cancel-btn {
+    padding: 12px 18px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .address-container {
+        grid-template-columns: 1fr;
+    }
+
+    .address-form {
+        padding: 20px;
+    }
+
+}
+/* =========================================
+   RECENTLY VIEWED
+========================================= */
+
+.recently-viewed-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.recently-viewed-card {
+    border: 1px solid rgba(198, 161, 91, 0.2);
+    background: rgba(90, 16, 32, 0.04);
+    overflow: hidden;
+}
+
+.recently-viewed-image {
+    display: block;
+    overflow: hidden;
+}
+
+.recently-viewed-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.recently-viewed-card:hover
+.recently-viewed-image img {
+    transform: scale(1.04);
+}
+
+.recently-viewed-info {
+    padding: 18px;
+}
+
+.recently-viewed-info p {
+    margin-bottom: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.recently-viewed-info h3 {
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.recently-viewed-info span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .recently-viewed-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .recently-viewed-image img {
+        height: 230px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .recently-viewed-container {
+        grid-template-columns: 1fr;
+    }
+
+    .recently-viewed-image img {
+        height: 320px;
+    }
+
+}
+/* =========================================
+   YOU MAY ALSO LIKE
+========================================= */
+
+.you-may-also-like {
+    padding: 90px 6%;
+    background: var(--ivory);
+}
+
+.related-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.related-heading span {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold);
+}
+
+.related-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.related-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.related-product-card {
+    background: var(--white);
+    overflow: hidden;
+}
+
+.related-product-image {
+    display: block;
+    overflow: hidden;
+}
+
+.related-product-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.related-product-card:hover
+.related-product-image img {
+    transform: scale(1.04);
+}
+
+.related-product-info {
+    padding: 20px;
+}
+
+.related-product-info p {
+    margin-bottom: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.related-product-info h3 {
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.related-product-info span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .you-may-also-like {
+        padding: 65px 5%;
+    }
+
+    .related-products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .related-product-image img {
+        height: 280px;
+    }
+
+    .related-heading h2 {
+        font-size: 30px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .related-products {
+        grid-template-columns: 1fr;
+    }
+
+    .related-product-image img {
+        height: 360px;
+    }
+
+}
+/* =========================================
+   KALORA TOAST
+========================================= */
+
+.kalora-toast {
+
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform:
+        translate(-50%, 20px);
+
+    background: var(--black);
+
+    color: var(--ivory);
+
+    padding: 14px 24px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    border: 1px solid var(--gold);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 9999;
+
+}
+
+
+.kalora-toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translate(-50%, 0);
+
+}
+/* =========================================
+   ORDER TRACKING MODAL
+========================================= */
+
+.order-tracking-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 9, 9, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 9999;
+}
+
+.order-tracking-modal {
+    position: relative;
+    width: min(600px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--ivory);
+    padding: 45px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.tracking-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.order-tracking-modal h2 {
+    margin: 8px 0 8px;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+}
+
+.tracking-order-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--burgundy);
+    margin-bottom: 35px;
+}
+
+/* TIMELINE */
+
+.tracking-timeline {
+    position: relative;
+    margin: 10px 0 40px 10px;
+}
+
+.tracking-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    min-height: 62px;
+}
+
+.tracking-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 23px;
+    width: 1px;
+    height: 39px;
+    background: #d8d0c5;
+}
+
+.tracking-step.completed:not(:last-child)::after,
+.tracking-step.current:not(:last-child)::after {
+    background: var(--gold);
+}
+
+.tracking-dot {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    border: 1px solid #cfc6bb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    background: var(--ivory);
+    z-index: 1;
+}
+
+.tracking-step.completed .tracking-dot,
+.tracking-step.current .tracking-dot {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+    color: var(--white);
+}
+
+.tracking-step-info {
+    padding-top: 2px;
+}
+
+.tracking-step-info strong {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.tracking-step-info span {
+    display: block;
+    margin-top: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+/* ORDER ITEMS */
+
+.tracking-products {
+    border-top: 1px solid #ddd4c9;
+    padding-top: 25px;
+}
+
+.tracking-products h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.tracking-product {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.tracking-product img {
+    width: 65px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.tracking-product strong {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+}
+
+.tracking-product p {
+    margin-top: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.tracking-total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd4c9;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.tracking-total strong {
+    color: var(--burgundy);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .order-tracking-overlay {
+        padding: 15px;
+    }
+
+    .order-tracking-modal {
+        padding: 30px 22px;
+    }
+
+    .order-tracking-modal h2 {
+        font-size: 27px;
+    }
+
+}

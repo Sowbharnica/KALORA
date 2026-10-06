@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<link rel="icon" type="image/png" href="images/logo.png">
+    <title>KALORA | Order Confirmed</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <main class="order-success">
+
+        <span class="success-label">
+            KALORA
+        </span>
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h1>
+            Order Confirmed
+        </h1>
+
+        <p>
+            Thank you for shopping with KALORA.
+        </p>
+
+        <p id="successOrderNumber">
+            Order Number
+        </p>
+
+        <div class="success-actions">
+
+            <a href="account.html">
+                VIEW MY ORDERS
+            </a>
+
+            <a href="shop.html">
+                CONTINUE SHOPPING
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const orderNumber =
+            params.get("order");
+
+        const element =
+            document.getElementById(
+                "successOrderNumber"
+            );
+
+        if (orderNumber) {
+
+            element.textContent =
+                "ORDER #" + orderNumber;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

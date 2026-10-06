@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo.png">
+    <title>My Account | KALORA</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+    <button class="menu-btn">
+        ☰
+    </button>
+
+    <nav class="nav-left">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="shop.html">
+            Shop
+        </a>
+
+        <a href="#">
+            Collections
+        </a>
+
+    </nav>
+
+
+    <a href="index.html"
+       class="logo">
+
+        KALORA
+
+    </a>
+
+
+    <nav class="nav-right">
+
+        <a href="cart.html">
+            Bag
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="account-header">
+
+    <p>
+        KALORA
+    </p>
+
+    <h1>
+        My Account
+    </h1>
+
+</section>
+
+
+
+<main class="account-page">
+
+
+    <aside class="account-menu">
+
+        <button class="account-tab active"
+                data-section="profile">
+
+            Profile
+
+        </button>
+
+        <button class="account-tab"
+                data-section="orders">
+
+            My Orders
+
+        </button>
+
+        <button class="account-tab"
+                data-section="wishlist">
+
+            Wishlist
+
+        </button>
+
+        <button class="account-tab"
+                data-section="addresses">
+
+            Saved Addresses
+
+        </button>
+
+        <button
+          type="button"
+          id="logoutBtn"
+          class="account-logout"
+         > 
+         LOG OUT
+       </button>
+    </aside>
+
+
+
+    <section class="account-content">
+
+
+        <!-- PROFILE -->
+
+        <section class="account-section active" id="profile"></section>
+          <span class="account-label">YOUR DETAILS</span>
+
+          <h2>My Profile</h2>
+
+         <div class="profile-form">
+
+          <div class="profile-field">
+
+            <label>FULL NAME</label>
+
+            <input
+                type="text"
+                id="profileName"
+                placeholder="Your full name"
+            >
+
+         </div>
+
+
+         <div class="profile-field">
+
+            <label>EMAIL ADDRESS</label>
+
+            <input
+                type="email"
+                id="profileEmail"
+                placeholder="Your email"
+                readonly
+            >
+
+         </div>
+
+
+         <div class="profile-field">
+
+            <label>PHONE NUMBER</label>
+
+            <input
+                type="tel"
+                id="profilePhone"
+                placeholder="Your phone number"
+            >
+
+         </div>
+
+
+         <button
+            type="button"
+            class="profile-save-btn"
+            id="saveProfileBtn"
+         >
+            SAVE CHANGES
+         </button>
+
+         <p
+            id="profileMessage"
+            class="profile-message"
+         ></p>
+
+         </div>
+
+       </section>
+
+        <!-- ORDERS -->
+
+        <section class="account-section" id="orders">
+
+          <span class="account-label">PURCHASE HISTORY</span>
+
+          <h2>My Orders</h2>
+
+         <div
+           id="ordersContainer"
+           class="orders-container"
+          >
+          <!-- Orders will appear here -->
+         </div>
+
+       </section>
+       <section class="account-section" id="orderTracking">
+
+    <span class="account-label">DELIVERY</span>
+
+    <h2>Track Your Order</h2>
+
+    <div class="tracking-card">
+
+        <div class="tracking-order">
+            ORDER #KL10001
+        </div>
+
+        <div class="tracking-line">
+
+            <div class="tracking-step active">
+                <span>✓</span>
+                <p>Confirmed</p>
+            </div>
+
+            <div class="tracking-step active">
+                <span>✓</span>
+                <p>Packed</p>
+            </div>
+
+            <div class="tracking-step active">
+                <span>✓</span>
+                <p>Shipped</p>
+            </div>
+
+            <div class="tracking-step">
+                <span>4</span>
+                <p>Out for Delivery</p>
+            </div>
+
+            <div class="tracking-step">
+                <span>5</span>
+                <p>Delivered</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- WISHLIST -->
+
+<div id="wishlist"
+     class="account-section">
+
+    <span class="account-label">
+        YOUR FAVOURITES
+    </span>
+
+    <h2>
+        My Wishlist
+    </h2>
+
+    <div id="wishlistContainer"
+         class="wishlist-container">
+        <!-- Wishlist products will appear here -->
+    </div>
+
+</div>
+
+        <!-- ADDRESSES -->
+
+       <div id="addresses" 
+         class="account-section">
+
+         <span class="account-label">DELIVERY</span>
+
+         <h2>Saved Addresses</h2>
+
+          <div id="addressContainer" class="address-container">
+          <!-- Saved addresses will appear here -->
+         </div>
+
+         <button
+           type="button"
+           class="account-action-btn"
+           id="addAddressBtn"
+            >
+           + ADD NEW ADDRESS
+         </button>
+
+       </div>
+
+    </section>
+
+</main>
+<!-- RECENTLY VIEWED -->
+
+<div id="recentlyViewed" class="account-section">
+
+    <span class="account-label">
+        YOUR HISTORY
+    </span>
+
+    <h2>
+        Recently Viewed
+    </h2>
+
+    <div
+        id="recentlyViewedContainer"
+        class="recently-viewed-container">
+
+        <!-- Recently viewed products will appear here -->
+
+    </div>
+
+</div>
+
+
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        <h2>KALORA</h2>
+
+        <p>
+            Where Elegance Has an Aura
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

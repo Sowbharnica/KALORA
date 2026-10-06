@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Product | KALORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <button class="menu-btn">☰</button>
+
+        <nav class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Collections</a>
+        </nav>
+
+        <a href="index.html" class="logo">
+            KALORA
+        </a>
+
+        <nav class="nav-right">
+    <a href="account.html">ACCOUNT</a>
+    <a href="#">♡</a>
+    <a href="cart.html">
+    Bag <span id="cartCount">(0)</span>
+</a>
+</nav>
+
+    </header>
+    
+    <!-- YOU MAY ALSO LIKE -->
+
+<section class="you-may-also-like">
+
+    <div class="related-heading">
+
+        <span>
+            DISCOVER MORE
+        </span>
+
+        <h2>
+            You May Also Like
+        </h2>
+
+    </div>
+
+
+    <div
+        id="relatedProducts"
+        class="related-products">
+
+        <!-- Products will appear here -->
+
+    </div>
+
+</section>
+
+
+    <!-- PRODUCT DETAILS -->
+
+    <main class="product-details">
+
+        <!-- PRODUCT IMAGES -->
+
+        <section class="product-gallery">
+
+            <div class="main-product-image">
+
+                <img
+                    id="mainProductImage"
+                    src="images/maxi.jpg"
+                    alt="Burgundy Grace Maxi">
+
+                <button
+                 class="product-wishlist wishlist-btn"
+                 type="button"
+                 aria-label="Add to wishlist">
+                 ♡
+                </button>
+            </div>
+
+            <div class="thumbnail-images">
+
+                <button class="thumbnail active">
+                    <img src="images/maxi.jpg"
+                        alt="Product image 1">
+                </button>
+
+                <button class="thumbnail">
+                    <img src="images/maxi.jpg"
+                        alt="Product image 2">
+                </button>
+
+                <button class="thumbnail">
+                    <img src="images/maxi.jpg"
+                        alt="Product image 3">
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <section class="product-details-info">
+
+            <p class="detail-category" id="productCategory">
+            MAXI DRESSES
+           </p>
+
+            <h1 id="productName">
+            Burgundy Grace Maxi
+           </h1>
+
+            <div class="detail-price" id="productPrice">
+           ₹2,499
+           </div>
+            <p class="tax-info">
+                Inclusive of all taxes
+            </p>
+
+
+            <div class="detail-divider"></div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="detail-description">
+
+                <p>
+                    An elegant silhouette designed to bring
+                    effortless sophistication to every occasion.
+                </p>
+
+            </div>
+
+
+            <!-- COLOUR -->
+
+            <div class="option-group">
+
+                <h3>
+                    Colour:
+                    <span id="selectedColour">
+                        Burgundy
+                    </span>
+                </h3>
+
+                <div class="colour-options">
+
+                    <button
+                        class="colour-btn selected"
+                        data-colour="Burgundy">
+                    </button>
+
+                    <button
+                        class="colour-btn black"
+                        data-colour="Black">
+                    </button>
+
+                    <button
+                        class="colour-btn ivory"
+                        data-colour="Ivory">
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIZE -->
+
+            <div class="option-group">
+
+                <div class="size-heading">
+
+                    <h3>
+                        Select Size
+                    </h3>
+
+                    <a href="#">
+                        Size Guide
+                    </a>
+
+                </div>
+
+                <div class="size-options">
+
+    <button class="size-btn">S</button>
+    <button class="size-btn">M</button>
+    <button class="size-btn">L</button>
+    <button class="size-btn">XL</button>
+
+</div>
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="option-group">
+
+                <h3>
+                    Quantity
+                </h3>
+
+                <div class="quantity-box">
+
+                    <button id="minusBtn">
+                        −
+                    </button>
+
+                    <span id="quantity">
+                        1
+                    </span>
+
+                    <button id="plusBtn">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="purchase-buttons">
+
+                <button class="add-cart-btn"
+        id="addToCartBtn">
+
+    ADD TO BAG
+
+</button>
+                <button
+                  class="buy-now-btn"
+                  id="buyNowBtn">
+                  BUY NOW
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+
+            <div class="product-extra">
+
+                <details>
+                    <summary>
+                        Product Details
+                    </summary>
+
+                    <p>
+                        Fabric: Premium blend<br>
+                        Fit: Regular<br>
+                        Style: Elegant Maxi<br>
+                        Occasion: Evening / Festive
+                    </p>
+
+                </details>
+
+
+                <details>
+                    <summary>
+                        Shipping & Delivery
+                    </summary>
+
+                    <p>
+                        Delivery information will be
+                        displayed during checkout.
+                    </p>
+
+                </details>
+
+
+                <details>
+                    <summary>
+                        Returns & Exchange
+                    </summary>
+
+                    <p>
+                        Returns and exchanges are available
+                        according to KALORA's return policy.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            <h2>KALORA</h2>
+            <p>Where Elegance Has an Aura</p>
+        </div>
+
+        <div>
+            <h3>EXPLORE</h3>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Collections</a>
+        </div>
+
+        <div>
+            <h3>HELP</h3>
+            <a href="#">Contact</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+<script>
+
+const productData = {
+
+    maxi: {
+        name: "Burgundy Grace Maxi",
+        price: 2499,
+        category: "MAXI DRESSES",
+        image: "images/maxi.jpg",
+        colour: "Burgundy",
+        description: "An elegant silhouette designed to bring effortless sophistication to every occasion."
+    },
+
+    churidar: {
+        name: "Royal Aura Churidar",
+        price: 1999,
+        category: "CHURIDAR",
+        image: "images/churidar.jpg",
+        colour: "Royal Blue",
+        description: "A graceful churidar designed with a refined silhouette for elegant everyday and festive styling."
+    },
+
+    tops: {
+        name: "Noir Silk Top",
+        price: 1299,
+        category: "TOPS",
+        image: "images/tops.jpg",
+        colour: "Black",
+        description: "A sophisticated silk-inspired top designed for a sleek and modern look."
+    },
+
+    frocks: {
+        name: "Golden Bloom Frock",
+        price: 2899,
+        category: "FULL FROCKS",
+        image: "images/frocks.jpg",
+        colour: "Golden",
+        description: "A beautiful full frock with an elegant silhouette, perfect for celebrations and special occasions."
+    },
+
+    party: {
+        name: "Midnight Glam Dress",
+        price: 3299,
+        category: "PARTY WEAR",
+        image: "images/party.jpg",
+        colour: "Black",
+        description: "A statement party dress created for glamorous evenings and unforgettable occasions."
+    },
+
+    western: {
+        name: "Eclipse Western Dress",
+        price: 2299,
+        category: "WESTERN WEAR",
+        image: "images/western.jpg",
+        colour: "Black",
+        description: "A modern western silhouette combining effortless style with a sophisticated KALORA finish."
+    }
+
+};
+
+
+// GET PRODUCT FROM URL
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const selectedProduct = urlParams.get("product");
+
+const product = productData[selectedProduct];
+
+
+// DISPLAY PRODUCT
+
+if (product) {
+
+    addRecentlyViewed(product);
+
+    document.getElementById("productName").textContent = product.name;
+
+    document.getElementById("productPrice").textContent =
+        "₹" + product.price.toLocaleString("en-IN");
+
+    document.getElementById("productCategory").textContent =
+        product.category;
+
+    document.getElementById("mainProductImage").src =
+        product.image;
+
+    document.getElementById("mainProductImage").alt =
+        product.name;
+
+        // UPDATE PRODUCT THUMBNAILS
+
+const thumbnails =
+    document.querySelectorAll(
+        ".thumbnail img"
+    );
+
+thumbnails.forEach((image, index) => {
+
+    image.src = product.image;
+    image.alt =
+        product.name + " image " + (index + 1);
+
+});
+
+    document.querySelector(".detail-description p").textContent =
+        product.description;
+
+    document.getElementById("selectedColour").textContent =
+        product.colour;
+
+    document.title = product.name + " | KALORA";
+
+}
+
+</script>
+
+</body>
+
+</html>

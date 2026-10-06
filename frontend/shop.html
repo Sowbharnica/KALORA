@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Shop | KALORA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <button class="menu-btn">☰</button>
+
+        <nav class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Collections</a>
+        </nav>
+
+        <a href="index.html" class="logo">
+            KALORA
+        </a>
+
+        <nav class="nav-right">
+    <a href="account.html">ACCOUNT</a>
+    <a href="#">♡</a>
+   <a href="cart.html">Bag <span id="cartCount">(0)</span></a>
+</nav>
+    </header>
+
+
+    <!-- SHOP HEADER -->
+
+    <section class="shop-header">
+
+        <p>THE KALORA COLLECTION</p>
+
+        <h1>Shop</h1>
+
+        <span>
+            Discover pieces designed for every expression of elegance.
+        </span>
+
+    </section>
+
+
+    <!-- SHOP CONTROLS -->
+
+    <section class="shop-controls">
+
+    <!-- SEARCH -->
+    <div class="shop-search">
+        <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products..."
+        >
+    </div>
+
+    <!-- CATEGORY FILTER -->
+    <div class="shop-filter">
+        <label>Category</label>
+
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="maxi">Maxi Dresses</option>
+            <option value="churidar">Churidar</option>
+            <option value="tops">Tops</option>
+            <option value="frocks">Full Frocks</option>
+            <option value="party">Party Wear</option>
+            <option value="western">Western Wear</option>
+        </select>
+    </div>
+
+    <!-- SORT -->
+    <div class="shop-filter">
+        <label>Sort By</label>
+
+        <select id="sortProducts">
+            <option value="default">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+        </select>
+    </div>
+
+   </section>
+    <!-- PRODUCT GRID -->
+
+    <main class="product-section">
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- PRODUCT 1 -->
+
+            <article class="product-card"
+         data-category="maxi"
+         data-price="2499"
+         onclick="window.location.href='product.html?product=maxi'">
+
+                <div class="product-image">
+
+                    <img src="images/maxi.jpg"
+                        alt="Elegant Maxi Dress">
+
+                    <button
+                     class="wishlist-btn"
+                     type="button"
+                     aria-label="Add to wishlist">
+                      ♡
+                    </button>
+
+                    <span class="product-badge">
+                        NEW
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MAXI DRESSES
+                    </p>
+
+                    <h2 class="product-name">
+                      Burgundy Grace Maxi
+                   </h2>
+
+                    <p class="product-price">
+                        ₹2,499
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 2 -->
+
+            <article class="product-card"
+         data-category="churidar"
+         data-price="1999"
+         onclick="window.location.href='product.html?product=churidar'">
+
+                <div class="product-image">
+
+                    <img src="images/churidar.jpg"
+                        alt="Elegant Churidar">
+
+                    <button
+                     class="wishlist-btn"
+                     type="button"
+                     aria-label="Add to wishlist">
+                      ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        CHURIDAR
+                    </p>
+
+                    <h2 class="product-name">
+                       Royal Aura Churidar
+                   </h2>
+
+                    <p class="product-price">
+                        ₹1,999
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 3 -->
+
+            <article class="product-card"
+         data-category="tops"
+         data-price="1299"
+         onclick="window.location.href='product.html?product=tops'">
+
+                <div class="product-image">
+
+                    <img src="images/tops.jpg"
+                        alt="Elegant Top">
+
+                    <button
+                     class="wishlist-btn"
+                     type="button"
+                     aria-label="Add to wishlist">
+                      ♡
+                    </button>
+
+                    <span class="product-badge">
+                        NEW
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        TOPS
+                    </p>
+
+                    <h2 class="product-name">
+                      Noir Silk Top
+                    </h2>
+
+                    <p class="product-price">
+                        ₹1,299
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 4 -->
+
+            <article class="product-card"
+         data-category="frocks"
+         data-price="2899"
+         onclick="window.location.href='product.html?product=frocks'">
+
+                <div class="product-image">
+
+                    <img src="images/frocks.jpg"
+                        alt="Full Frock">
+
+                    <button
+                     class="wishlist-btn"
+                     type="button"
+                     aria-label="Add to wishlist">
+                      ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        FULL FROCKS
+                    </p>
+
+                    <h2 class="product-name">
+                       Golden Bloom Frock
+                    </h2>
+
+                    <p class="product-price">
+                        ₹2,899
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 5 -->
+
+           <article class="product-card"
+         data-category="party"
+         data-price="3299"
+         onclick="window.location.href='product.html?product=party'">
+
+                <div class="product-image">
+
+                    <img src="images/party.jpg"
+                        alt="Party Wear Dress">
+
+                    <button
+                     class="wishlist-btn"
+                     type="button"
+                     aria-label="Add to wishlist">
+                      ♡
+                    </button>
+
+                    <span class="product-badge">
+                        BESTSELLER
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        PARTY WEAR
+                    </p>
+
+                    <h2 class="product-name">
+                      Midnight Glam Dress
+                   </h2>
+
+                    <p class="product-price">
+                        ₹3,299
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 6 -->
+
+           <article class="product-card"
+         data-category="western"
+         data-price="2299"
+         onclick="window.location.href='product.html?product=western'">
+
+                <div class="product-image">
+
+                    <img src="images/western.jpg"
+                        alt="Western Wear">
+
+                    <button
+                     class="wishlist-btn"
+                     type="button"
+                     aria-label="Add to wishlist">
+                      ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        WESTERN WEAR
+                    </p>
+
+                    <h2 class="product-name">
+                      Eclipse Western Dress
+                    </h2>
+
+                    <p class="product-price">
+                        ₹2,299
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            <h2>KALORA</h2>
+            <p>Where Elegance Has an Aura</p>
+        </div>
+
+        <div>
+            <h3>EXPLORE</h3>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Collections</a>
+        </div>
+
+        <div>
+            <h3>HELP</h3>
+            <a href="#">Contact</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
